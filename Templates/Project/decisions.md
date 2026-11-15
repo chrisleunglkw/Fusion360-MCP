@@ -1,0 +1,6 @@
+# Design Decisions & Revision Log: <Project Title>
+
+## `v001` — Initial Concept
+- **Changes**: ...
+- **Geometry Checks**: Watertight: `?`, Components: `?`, Volume: `? cm³`, Est. Weight: `? g`
+- **User Feedback**: ...
