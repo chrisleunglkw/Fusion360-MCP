@@ -25,11 +25,11 @@ Fusion360-MCP/
 │       ├── brief.md            # Template for measurements & protected interfaces
 │       └── decisions.md        # Template for vNNN revision log & physical feedback
 └── Projects/
-    └── tisken-soap-drainer/    # Example project (v004 Japanese "Hamon" minimalist drainer)
+    └── <project_id>/           # Created per object from Templates/Project/
         ├── brief.md
         ├── decisions.md
         ├── cad/                # Master Python + Fusion 360 scripts (mm)
-        └── exports/v004/       # Versioned STL, SHA-256 manifest.json, 4-view PNG
+        └── exports/v001/       # Versioned STL, SHA-256 manifest.json, 4-view PNG
 ```
 
 ---
@@ -61,9 +61,9 @@ pip install trimesh manifold3d shapely mapbox-earcut matplotlib numpy
 > **Note**: If Fusion 360 is closed, the workspace automatically falls back to generating watertight STLs via `trimesh` + `manifold3d` alongside an editable `generate_*.py` Fusion 360 script.
 
 ### 4. Verify Installation
-Run the automated CAD gate against the included example project:
+Run the automated CAD gate on any exported `.stl` file:
 ```bash
-python scripts/cad_check.py Projects/tisken-soap-drainer/exports/v004/IKEA_TISKEN_Round_Soap_Drainer_110mm_Minimalist.stl --manifest Projects/tisken-soap-drainer/exports/v004/manifest.json --views Projects/tisken-soap-drainer/exports/v004/views_4panel.png
+python scripts/cad_check.py Projects/<project_id>/exports/v001/model.stl --manifest Projects/<project_id>/exports/v001/manifest.json --views Projects/<project_id>/exports/v001/views_4panel.png
 ```
 Expected output: `"passed": true`, `"watertight": true`, `"connected_components": 1`.
 
